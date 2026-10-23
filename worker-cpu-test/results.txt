@@ -1,0 +1,40 @@
+﻿Warming up...
+
+Running benchmark...
+
+=== BENCHMARK RESULTS ===
+Iterations: 1000
+Vocabulary size: 100
+
+Timing (milliseconds):
+  Mean: 0.007 ms
+  p50:  0.004 ms
+  p95:  0.011 ms
+  p99:  0.050 ms
+  Max:  0.553 ms
+
+=== VERDICT ===
+✓ PASS: p95 (0.011 ms) < 10 ms CPU limit
+  Feasible for Cloudflare Worker deployment
+
+=== SAMPLE PREDICTIONS ===
+1. "What is 2 + 2?"
+   → easy (p=0.361)
+2. "Calculate the sum of numbers from 1 to 100"
+   → easy (p=0.382)
+3. "Explain quantum entanglement in simple terms"
+   → easy (p=0.360)
+4. "Write a comprehensive analysis of the socioeconomic factors ..."
+   → easy (p=0.403)
+5. "Help me debug this Python code"
+   → easy (p=0.438)
+6. "Derive the proof for Fermat's Last Theorem and explain each ..."
+   → easy (p=0.493)
+7. "What's the weather like?"
+   → easy (p=0.364)
+8. "Design a distributed system architecture for a high-throughp..."
+   → easy (p=0.418)
+9. "Create a simple hello world function"
+   → easy (p=0.418)
+10. "Analyze the time complexity of this sorting algorithm and pr..."
+   → easy (p=0.407)

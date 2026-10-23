@@ -1,0 +1,51 @@
+{
+  "vocabulary": [
+    "calculate", "compute", "solve", "equation", "sum", "multiply", "divide", "number", "math", "result",
+    "code", "function", "class", "variable", "python", "javascript", "algorithm", "debug", "error", "syntax",
+    "explain", "what", "how", "why", "tell", "describe", "define", "mean", "understand", "simple",
+    "complex", "difficult", "analyze", "compare", "evaluate", "critique", "deep", "detail", "comprehensive", "thorough",
+    "write", "create", "generate", "build", "make", "design", "implement", "develop", "construct", "produce",
+    "the", "a", "is", "are", "of", "to", "in", "for", "with", "on",
+    "question", "answer", "help", "please", "can", "you", "me", "my", "i", "need",
+    "logic", "reasoning", "proof", "theorem", "derive", "deduce", "infer", "conclude", "demonstrate", "show",
+    "data", "analysis", "statistics", "model", "predict", "forecast", "trend", "pattern", "correlation", "regression",
+    "system", "architecture", "design", "structure", "component", "module", "interface", "api", "service", "layer"
+  ],
+  "idf": [
+    2.5, 2.3, 2.6, 2.8, 2.1, 2.4, 2.4, 1.8, 2.2, 2.0,
+    2.7, 2.9, 2.8, 2.5, 2.6, 2.6, 3.0, 2.4, 2.3, 2.7,
+    1.5, 1.2, 1.4, 1.6, 1.3, 1.7, 1.8, 1.5, 1.6, 1.4,
+    3.2, 3.1, 3.4, 3.0, 3.3, 3.2, 3.1, 3.0, 3.4, 3.3,
+    2.0, 2.1, 2.2, 2.3, 1.9, 2.4, 2.5, 2.3, 2.2, 2.1,
+    0.5, 0.6, 0.7, 0.8, 0.9, 0.6, 0.7, 0.8, 0.6, 0.7,
+    1.1, 1.0, 1.2, 1.1, 1.3, 1.0, 1.1, 1.2, 1.0, 1.3,
+    3.5, 3.6, 3.7, 3.8, 3.6, 3.5, 3.4, 3.6, 3.7, 3.5,
+    2.8, 3.0, 2.9, 3.1, 3.2, 3.0, 2.9, 3.1, 3.0, 2.9,
+    2.6, 2.7, 2.5, 2.8, 2.6, 2.7, 2.8, 2.9, 2.7, 2.8
+  ],
+  "weights": [
+    0.15, 0.12, 0.18, 0.22, 0.08, 0.11, 0.11, 0.05, 0.09, 0.07,
+    0.25, 0.30, 0.28, 0.20, 0.23, 0.23, 0.35, 0.15, 0.13, 0.24,
+    -0.10, -0.15, -0.12, -0.08, -0.14, -0.09, -0.07, -0.11, -0.09, -0.12,
+    0.40, 0.38, 0.45, 0.35, 0.42, 0.40, 0.38, 0.35, 0.44, 0.41,
+    0.18, 0.20, 0.22, 0.25, 0.16, 0.27, 0.29, 0.24, 0.21, 0.19,
+    -0.20, -0.18, -0.16, -0.15, -0.17, -0.19, -0.18, -0.16, -0.20, -0.17,
+    -0.05, -0.08, -0.06, -0.05, -0.04, -0.08, -0.06, -0.05, -0.08, -0.04,
+    0.50, 0.52, 0.55, 0.58, 0.51, 0.49, 0.47, 0.53, 0.56, 0.50,
+    0.32, 0.35, 0.33, 0.37, 0.39, 0.34, 0.33, 0.36, 0.35, 0.33,
+    0.21, 0.23, 0.19, 0.26, 0.22, 0.24, 0.27, 0.28, 0.23, 0.26
+  ],
+  "bias": -0.5,
+  "test_prompts": [
+    "What is 2 + 2?",
+    "Calculate the sum of numbers from 1 to 100",
+    "Explain quantum entanglement in simple terms",
+    "Write a comprehensive analysis of the socioeconomic factors that led to the Industrial Revolution, comparing multiple historical perspectives and evaluating their validity",
+    "Help me debug this Python code",
+    "Derive the proof for Fermat's Last Theorem and explain each step in detail",
+    "What's the weather like?",
+    "Design a distributed system architecture for a high-throughput message queue with exactly-once delivery guarantees, considering CAP theorem tradeoffs",
+    "Create a simple hello world function",
+    "Analyze the time complexity of this sorting algorithm and prove the lower bound for comparison-based sorting"
+  ]
+}
