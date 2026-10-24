@@ -42,5 +42,51 @@ flowchart LR
 ## KEAL gates passed
 (Link to docs/keal-gates.md will be added here)
 
-## Run it
-(Development instructions will be added as project progresses)
+## Development Setup
+
+### Quick Start
+
+**1. Install dependencies:**
+```bash
+# Bash
+bash setup.sh
+
+# PowerShell
+.\setup.ps1
+```
+
+**2. Set Groq API key:**
+```bash
+# Get free API key from: https://console.groq.com/keys
+export GROQ_API_KEY=your_key_here
+```
+
+**3. Generate evaluation dataset:**
+```bash
+cd datasets
+python sample_datasets.py
+```
+
+**4. Run pilot evaluation:**
+```bash
+cd evaluation
+python runner.py --model groq-20b --limit 20
+```
+
+See [evaluation/README.md](evaluation/README.md) for full evaluation workflow.
+
+### Project Status
+
+**Current Phase:** P4 Validation & Baselines (KEAL Framework)
+
+- [x] Feasibility test (Worker CPU test PASSED: 0.011ms p95)
+- [x] Dataset sampling infrastructure
+- [x] Evaluation runner with rate limiting and caching
+- [ ] Run baseline measurements (400 prompts × 2 models)
+- [ ] Build grading infrastructure
+- [ ] Train classifier
+- [ ] Build Cloudflare Worker
+- [ ] Build demo UI
+- [ ] Full evaluation and documentation
+
+See [PROJECT_PLAN.md](PROJECT_PLAN.md) for complete timeline.
