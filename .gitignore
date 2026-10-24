@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Evaluation cache and results
+evaluation/cache/
+*.jsonl
+!datasets/prompts.jsonl
+
+# Datasets (generated)
+datasets/prompts.jsonl
+datasets/LICENSE.md
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Cloudflare
+worker/node_modules/
+worker/.wrangler/
+worker/wrangler.toml
+
+# Demo
+demo/node_modules/
+demo/.next/
+demo/out/
+demo/build/
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
