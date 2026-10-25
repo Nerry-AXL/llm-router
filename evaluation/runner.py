@@ -38,15 +38,15 @@ CACHE_DIR.mkdir(exist_ok=True)
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_API_KEY_ENV = "GROQ_API_KEY"
 
-# Model configurations
+# Model configurations (verified against Groq console 2026-10-24)
 MODELS = {
-    "groq-20b": "llama-3.3-70b-versatile",  # Free tier model (~20B effective)
-    "groq-120b": "llama-3.1-405b-reasoning",  # Larger model
+    "groq-20b": "openai/gpt-oss-20b",
+    "groq-120b": "openai/gpt-oss-120b",
 }
 
 # Rate limiting (conservative estimates)
 DAILY_TOKEN_LIMIT = 200_000  # Groq free tier
-ESTIMATED_TOKENS_PER_REQUEST = 500  # Prompt + response average
+ESTIMATED_TOKENS_PER_REQUEST = 280  # Measured: 272 avg from 20-prompt pilot (2026-10-24)
 REQUESTS_PER_MINUTE = 30  # Groq free tier limit
 
 
@@ -117,7 +117,7 @@ class ResponseCache:
             return {}
 
         cache = {}
-        with self.cache_file.open() as f:
+        with self.cache_file.open(encoding='utf-8') as f:
             for line in f:
                 if line.strip():
                     entry = json.loads(line)
@@ -133,7 +133,7 @@ class ResponseCache:
         self.cache[entry['id']] = entry
 
         # Append to file
-        with self.cache_file.open('a') as f:
+        with self.cache_file.open('a', encoding='utf-8') as f:
             f.write(json.dumps(entry, ensure_ascii=False) + '\n')
 
 
