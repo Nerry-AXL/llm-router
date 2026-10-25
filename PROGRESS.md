@@ -288,4 +288,75 @@ After both models complete, you'll have:
 
 ---
 
-**Status:** Infrastructure complete. Ready for data collection. 🚀
+**Status:** Baseline data collection in progress. Day 1 complete. 🚀
+
+---
+
+## Update: 2026-10-25 - Baseline Data Collection (Day 1)
+
+### Completed
+
+**groq-20b (Small Model):**
+- ✅ 400/400 prompts evaluated
+- ✅ 83,702 tokens used
+- ✅ Cache: `evaluation/cache/groq-20b_responses.jsonl`
+- ✅ Zero errors after retry
+- ⏱️ Time: ~75 seconds (cache replay)
+
+**groq-120b (Large Model):**
+- ⏳ 209/400 prompts evaluated (52%)
+- ⏳ 199,970 tokens used (hit daily limit)
+- ⏳ 3 errors (rate limit timeouts)
+- ⏳ 188 prompts remaining
+- ⏱️ Time: ~19 minutes
+- 📅 Resume: Tomorrow (2026-10-26)
+
+### Key Findings
+
+**Token Usage:**
+- Small model: ~209 tokens/prompt average
+- Large model: ~956 tokens/prompt average (4.6x more expensive)
+- Code prompts use 2-3x more tokens than math/reasoning
+- Chat prompts highly variable (300-2100 tokens)
+
+**Rate Limiting:**
+- Hit tokens/min limit on groq-120b around prompt 150
+- Automatic retry with exponential backoff worked
+- 3 hard failures after 3 retries each (acceptable)
+- Daily token limit is the binding constraint
+
+**Cache Performance:**
+- Resume works perfectly - picked up at prompt 213
+- groq-20b replay from cache took 75s (instant)
+- No duplicate API calls on retry
+
+### Next Steps (2026-10-26)
+
+1. **Resume groq-120b evaluation:**
+   ```bash
+   python runner.py --model groq-120b
+   ```
+   - Will complete remaining 191 prompts
+   - Estimated: ~53K tokens, ~12 minutes
+
+2. **Build grader infrastructure:**
+   - Exact match grader for math/code/reasoning
+   - LLM judge (qwen3.8-27b) for chat category
+   - Compare small vs large model performance
+
+3. **Baseline metrics:**
+   - Always-large quality score
+   - Always-small quality score
+   - Cost per 1K queries for each strategy
+   - Identify "hard" vs "easy" prompts for labeling
+
+### Timeline Update
+
+**Week 1 Progress:**
+- ✅ Day 1: Infrastructure complete
+- ✅ Day 2: Pilot run + groq-20b baseline
+- ⏳ Day 2-3: groq-120b baseline (in progress)
+- 📅 Day 3-4: Grading and baseline analysis
+- 📅 Day 5: Heuristic router baseline
+
+**On track for November 10 target.** 🎯
